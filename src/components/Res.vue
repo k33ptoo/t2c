@@ -1,19 +1,19 @@
 <template >
     <div class="md:w-1/2 w-full px-2 md:px-0 justify-center flex flex-col gap-4 border-none focus:border-none text-white">
-        <div class="text-2xl mx-2 font-bold text-gray-500">
+        <div class="text-2xl font-bold text-gray-500">
             <span class="text1"></span>
             <span class="cursor1">|</span>
         </div>
         <textarea @keypress.enter="getRes" placeholder="Type your text here" ref="inputText"
-            class="p-2 mx-2 rounded-md bg-[#292C34] w-full focus:outline-none" v-model="input"></textarea>
-        <select v-model="selected" class="p-2 mx-2 rounded-md bg-[#292C34] w-full">
+            class="p-2 rounded-md bg-[#292C34] w-full focus:outline-none" v-model="input"></textarea>
+        <select v-model="selected" class="p-2 rounded-md bg-[#292C34] w-full">
             <option v-for="lang in languages" :key="lang" :value="lang">{{ lang }}</option>
         </select>
-        <button @click="getRes" class="p-2 mx-2 rounded-md bg-[#23CE6B] hover:bg-opacity-80 w-full">Convert</button>
-        <div v-if="loading" class="p-2 flex w-full relative justify-center rounded-md mx-2">
+        <button @click="getRes" class="p-2 rounded-md bg-[#23CE6B] hover:bg-opacity-80 w-full">Convert</button>
+        <div v-if="loading" class="p-2 flex w-full relative justify-center rounded-md ">
             <loader />
         </div>
-        <div v-else class="p-2 flex w-full relative bg-[#292C34] rounded-md mx-2">
+        <div v-else class="p-2 flex w-full relative bg-[#292C34] rounded-md">
             <pre class="w-full" v-highlightjs><code :class="selected">{{ res }}</code></pre>
             <button @click="copyCode" class="absolute right-2 top-2 text-white rounded-md hover:text-[#23CE6B]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
