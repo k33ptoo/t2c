@@ -1,5 +1,5 @@
 <template >
-    <div class="md:w-1/2 w-full px-2 md:px-0 justify-center flex flex-col gap-4 border-none focus:border-none text-white">
+    <div class="md:w-1/2 w-full h-full px-2 md:px-0 flex flex-col gap-4 border-none focus:border-none text-white">
         <div class="text-2xl font-bold text-gray-500">
             <span class="text1"></span>
             <span class="cursor1">|</span>
